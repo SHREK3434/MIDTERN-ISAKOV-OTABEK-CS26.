@@ -27,5 +27,5 @@
 - Шрифт: Системный стек шрифтов Segoe UI / Sans-serif.
 
 ## Развертывание
-- **GitHub Repository**: `https://github.com/USERNAME/midterm-engineering-college`
-- **GitHub Pages Live URL**: `https://USERNAME.github.io/midterm-engineering-college/`
+- **GitHub Repository**: `https://github.com/SHREK3434/MIDTERN-ISAKOV-OTABEK-CS26./edit/main/README.md`
+- **GitHub Pages Live URL**: `https://shrek3434.github.io/MIDTERN-ISAKOV-OTABEK-CS26./`
