@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация — Инженерный колледж</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Инженерный колледж</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">Программы</a></li>
+            <li class="nav-item"><a class="nav-link" href="admissions.html">Приемная комиссия</a></li>
+            <li class="nav-item"><a class="nav-link" href="campus.html">Студенческая жизнь</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+            <li class="nav-item"><a class="btn btn-warning ms-lg-2 fw-semibold active" aria-current="page" href="register.html">Подать заявку</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card p-4 shadow">
+          <h1 class="h3 text-center mb-4">Предварительная регистрация абитуриента</h1>
+
+          <div id="regSuccessAlert" class="alert alert-success d-none" role="alert">
+            Заявка успешно отправлена! Наш отдел приёма свяжется с вами по указанному email.
+          </div>
+
+          <form id="registrationForm" novalidate>
+            <!-- Имя, Email, Телефон -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-12">
+                <label for="fullName" class="form-label">Полное имя <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="fullName" required>
+                <div class="invalid-feedback">Укажите ваше полное имя.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="regEmail" class="form-label">Электронная почта <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="regEmail" required>
+                <div class="invalid-feedback">Введите действительный email.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="regPhone" class="form-label">Телефон <span class="text-danger">*</span></label>
+                <input type="tel" class="form-control" id="regPhone" required pattern="[0-9+()\s-]{7,}">
+                <div class="invalid-feedback">Укажите верный номер телефона.</div>
+              </div>
+            </div>
+
+            <!-- Выбор программы и режим -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="programSelect" class="form-label">Желаемая программа <span class="text-danger">*</span></label>
+                <select class="form-select" id="programSelect" required>
+                  <option value="" selected disabled>Выберите направление...</option>
+                  <option value="software">Разработка ПО и IT</option>
+                  <option value="robotics">Робототехника и Мехатроника</option>
+                  <option value="energy">Электроэнергетика</option>
+                  <option value="civil">Гражданское строительство</option>
+                </select>
+                <div class="invalid-feedback">Пожалуйста, выберите программу.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="startDate" class="form-label">Предполагаемая дата начала <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="startDate" required>
+                <div class="invalid-feedback">Выберите дату начала.</div>
+              </div>
+            </div>
+
+            <fieldset class="mb-3">
+              <legend class="col-form-label pt-0 font-weight-bold">Режим обучения <span class="text-danger">*</span></legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="studyMode" id="modeFull" value="fulltime" required>
+                <label class="form-check-label" for="modeFull">Очная</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="studyMode" id="modePart" value="parttime" required>
+                <label class="form-check-label" for="modePart">Заочная / Дистанционная</label>
+              </div>
+            </fieldset>
+
+            <!-- Пароль и подтверждение -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="password" class="form-label">Пароль <span class="text-danger">*</span></label>
+                <input type="password" class="form-control" id="password" minlength="8" required>
+                <div class="invalid-feedback">Пароль должен быть не менее 8 символов.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="confirmPassword" class="form-label">Подтверждение пароля <span class="text-danger">*</span></label>
+                <input type="password" class="form-control" id="confirmPassword" required>
+                <div class="invalid-feedback" id="confirmPasswordFeedback">Пароли не совпадают.</div>
+              </div>
+            </div>
+
+            <!-- Дополнительное поле -->
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="scholarshipCheck">
+                <label class="form-check-label" for="scholarshipCheck">
+                  Заинтересован в участии в конкурсе на получение стипендии
+                </label>
+              </div>
+            </div>
+
+            <!-- Согласие -->
+            <div class="mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                <label class="form-check-label" for="termsCheck">
+                  Я согласен с <a href="#">Политикой конфиденциальности</a> и условиями обработки данных <span class="text-danger">*</span>
+                </label>
+                <div class="invalid-feedback">Необходимо принять условия.</div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-warning w-100 btn-lg font-weight-bold">Зарегистрироваться</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2026 Инженерный колледж. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

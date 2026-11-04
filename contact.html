@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Инженерный колледж</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Инженерный колледж</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">Программы</a></li>
+            <li class="nav-item"><a class="nav-link" href="admissions.html">Приемная комиссия</a></li>
+            <li class="nav-item"><a class="nav-link" href="campus.html">Студенческая жизнь</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Контакты</a></li>
+            <li class="nav-item"><a class="btn btn-warning ms-lg-2 fw-semibold" href="register.html">Подать заявку</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-5">
+        <h1>Связаться с нами</h1>
+        <p>Если у вас возникли вопросы, заполните форму или используйте указанные контакты.</p>
+        <p><strong>Адрес:</strong> г. Бишкек, пр. Чуй, 255</p>
+        <p><strong>Телефон:</strong> +996 (312) 00-00-00</p>
+        <p><strong>Email:</strong> info@engineering-college.edu</p>
+      </div>
+
+      <div class="col-md-7">
+        <div class="card p-4 shadow-sm">
+          <h2 class="h4 mb-3">Форма обратной связи</h2>
+
+          <div id="contactSuccessAlert" class="alert alert-success d-none" role="alert">
+            Спасибо! Ваше сообщение успешно отправлено. Мы ответим вам в ближайшее время.
+          </div>
+
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <label for="contactName" class="form-label">Ваше имя <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="contactName" required>
+              <div class="invalid-feedback">Пожалуйста, укажите имя.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contactEmail" class="form-label">Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="contactEmail" required>
+              <div class="invalid-feedback">Введите корректный адрес электронной почты.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contactSubject" class="form-label">Тема <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="contactSubject" required>
+              <div class="invalid-feedback">Заполните тему обращения.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contactMessage" class="form-label">Сообщение <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+              <div class="invalid-feedback">Введите текст сообщения.</div>
+            </div>
+
+            <!-- Простая капча/Защита от спама -->
+            <div class="mb-3">
+              <label for="spamCheck" class="form-label">Защита от спама: сколько будет 5 + 3? <span class="text-danger">*</span></label>
+              <input type="number" class="form-control" id="spamCheck" required>
+              <div class="invalid-feedback">Неверный ответ на вопрос защиты.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Отправить сообщение</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2026 Инженерный колледж. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

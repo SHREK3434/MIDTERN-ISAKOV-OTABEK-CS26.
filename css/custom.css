@@ -1,0 +1,84 @@
+:root {
+  --primary-color: #0b3c5d;
+  --secondary-color: #328cc1;
+  --accent-color: #d9b310;
+  --dark-color: #1d2731;
+  --light-bg: #f8f9fa;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 76px; /* Отступ под фиксированную навигацию */
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Навигация */
+.navbar-custom {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #ffffff;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus {
+  color: var(--accent-color);
+}
+
+.navbar-custom .nav-link.active {
+  color: var(--accent-color) !important;
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Доступность и Фокусировка */
+:focus-visible {
+  outline: 3px solid var(--accent-color) !important;
+  outline-offset: 2px;
+}
+
+/* Hero Раздел */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 80px 0;
+  margin-bottom: 2rem;
+}
+
+/* Валидация форм */
+.form-control:focus, .form-select:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.25rem rgba(50, 140, 193, 0.25);
+}
+
+.invalid-feedback {
+  font-size: 0.875rem;
+}
+
+/* Карточки */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Подвал */
+footer {
+  background-color: var(--dark-color);
+  color: #ffffff;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
